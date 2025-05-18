@@ -306,7 +306,7 @@ document.addEventListener('DOMContentLoaded', function() {
 async function fetchAIResponse() {
     try {
         console.log("Sending request to backend server...");
-        const response = await fetch('http://localhost:3001/api/chat', {  // Changed from 3000 to 3001
+        const response = await fetch('https://your-render-url.onrender.com/api/chat', {  // Changed from 3000 to 3001
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
