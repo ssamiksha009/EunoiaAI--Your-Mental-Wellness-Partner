@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EunoiaAI - Mental Health Companion</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar with features and resources -->
+        <div class="sidebar">
+            <div class="logo">
+                <i class="fas fa-brain pulse" style="font-size: 60px;"></i>
+                <h1>EunoiaAI</h1>
+            </div>
+            <div class="features">
+                <div class="feature">
+                    <i class="fas fa-comments"></i>
+                    <div class="feature-text">
+                        <h3>Empathetic Chat</h3>
+                        <p>Talk through your feelings with AI that understands</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-chart-line"></i>
+                    <div class="feature-text">
+                        <h3>Mood Tracking</h3>
+                        <p>Monitor your emotional wellbeing over time</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-book"></i>
+                    <div class="feature-text">
+                        <h3>Coping Strategies</h3>
+                        <p>Learn evidence-based techniques</p>
+                    </div>
+                </div>
+            </div>
+            <div class="resources">
+                <h3>Emergency Resources</h3>
+                <a href="#" class="resource-link">Crisis Hotline: 988</a>
+                <a href="#" class="resource-link">Find a Therapist</a>
+                <a href="#" class="resource-link">Meditation Exercises</a>
+                <a href="#" class="resource-link">Self-Care Tips</a>
+            </div>
+        </div>
+
+        <!-- Main chat content -->
+        <div class="main-content">
+            <div class="chat-header">
+                <div class="chat-title">
+                    <h2>Mental Health Support</h2>
+                    <p>Confidential conversation with EunoiaAI</p>
+                </div>
+                <div class="chat-actions">
+                    <button id="mood-tracker-btn" title="Track Your Mood"><i class="fas fa-smile"></i></button>
+                    <button id="settings-btn" title="Settings"><i class="fas fa-cog"></i></button>
+                </div>
+            </div>
+
+            <div class="chat-container" id="chat-container">
+                <div class="chat-welcome">
+                    <h2>Welcome to EunoiaAI</h2>
+                    <p>I'm here to listen, support, and provide guidance for your mental wellbeing. How are you feeling today?</p>
+                    <div class="suggested-topics">
+                        <button class="topic-button">I'm feeling anxious</button>
+                        <button class="topic-button">Help with stress</button>
+                        <button class="topic-button">Feeling low today</button>
+                        <button class="topic-button">Need coping strategies</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="input-container">
+                <textarea id="user-input" placeholder="Type your message here..." rows="1"></textarea>
+                <button id="send-button" class="send-button" disabled>
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+
+            <!-- Mood tracker popup -->
+            <div id="mood-tracker" class="mood-tracker">
+                <h3>How are you feeling right now?</h3>
+                <div class="mood-options">
+                    <div class="mood-option" data-mood="1">
+                        <div class="mood-emoji">😢</div>
+                        <div class="mood-label">Terrible</div>
+                    </div>
+                    <div class="mood-option" data-mood="2">
+                        <div class="mood-emoji">😔</div>
+                        <div class="mood-label">Bad</div>
+                    </div>
+                    <div class="mood-option" data-mood="3">
+                        <div class="mood-emoji">😐</div>
+                        <div class="mood-label">Okay</div>
+                    </div>
+                    <div class="mood-option" data-mood="4">
+                        <div class="mood-emoji">🙂</div>
+                        <div class="mood-label">Good</div>
+                    </div>
+                    <div class="mood-option" data-mood="5">
+                        <div class="mood-emoji">😁</div>
+                        <div class="mood-label">Great</div>
+                    </div>
+                </div>
+                <button class="mood-submit">Save Mood</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Settings Modal -->
+    <div id="settings-modal" class="modal">
+        <div class="modal-content">
+            <button class="close-modal" id="close-settings-modal"><i class="fas fa-times"></i></button>
+            <h3 class="modal-title">Chat Settings</h3>
+            
+            <div class="settings-option">
+                <h4>Conversation Mode</h4>
+                <p>Choose how EunoiaAI responds to your messages</p>
+                <select id="conversation-mode" class="settings-select">
+                    <option value="empathetic">Empathetic Listener</option>
+                    <option value="therapist">CBT Therapist</option>
+                    <option value="coach">Motivational Coach</option>
+                    <option value="friend">Supportive Friend</option>
+                </select>
+            </div>
+            
+            <div class="settings-option">
+                <h4>Privacy Mode</h4>
+                <p>Clear chat history when closing the browser</p>
+                <div class="toggle-container">
+                    <label class="toggle">
+                        <input type="checkbox" id="privacy-toggle" checked>
+                        <span class="toggle-slider"></span>
+                    </label>
+                    <span class="toggle-label">Enabled</span>
+                </div>
+            </div>
+            
+            <div class="settings-option">
+                <h4>Message Tone</h4>
+                <p>Adjust the tone of AI responses</p>
+                <div class="tone-slider-container">
+                    <span>Gentle</span>
+                    <input type="range" min="1" max="5" value="3" id="tone-slider">
+                    <span>Direct</span>
+                </div>
+            </div>
+            
+            <button id="save-settings">Save Settings</button>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
