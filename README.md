@@ -1,6 +1,6 @@
 # EunoiaAI: Your Mental Wellness Partner
 
-A beautiful, empathetic mental health chatbot powered by OpenAI's GPT-4. This application provides a supportive conversation interface, mood tracking, and mental health resources in an elegant and user-friendly design.
+A beautiful, empathetic mental health chatbot powered by OpenRouter. This application provides a supportive conversation interface, mood tracking, and mental health resources in an elegant and user-friendly design.
 
 
 ## Features
